@@ -1,6 +1,6 @@
 # DUArcade 🎮🛒
 
-![GitHub license](https://img.shields.io/badge/license-GPL--3.0-blue.svg)
+![GitHub license](https://img.shields.io/badge/license-MIT-green.svg)
 ![GitHub issues](https://img.shields.io/github/issues/talhabangyal/duarcade)
 ![GitHub stars](https://img.shields.io/github/stars/talhabangyal/duarcade?style=social)
 
@@ -62,5 +62,5 @@ Contributions are welcome! Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for g
 
 ## License
 
-This project is licensed under the GNU General Public License v3.0 (GPL-3.0).  
+This project is licensed under the MIT License.  
 See the [LICENSE](./LICENSE) file for the full license text.
