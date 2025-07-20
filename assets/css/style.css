@@ -1,0 +1,460 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+    font-family: system-ui, -apple-system, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* ============= navbar ================ */
+/* Navbar adjustments for Dark Mode and Original Size */
+.navbar {
+    background-color: #212529;  /* Dark background for dark mode */
+    padding: 0.5rem 1rem; /* Default padding to ensure a proper height */
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;  /* White text for nav items */
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem; /* Original padding size for nav items */
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #ccc;  /* Slightly lighter color on hover */
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #1565c0 !important;  /* Highlight the active nav item with a color */
+}
+.navbar-toggler-icon {
+    background-color: #fff; /* Ensure the toggle icon is white */
+}
+
+/* Ensuring the search form also respects dark mode */
+.form-control {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+.form-control:focus {
+    color: #fff; /* White text on focus */
+    background-color: #444;  /* Slightly lighter dark background on focus */
+    border-color: #ff3366;  /* Accent color border on focus */
+}
+
+.btn-outline-light {
+    border-color: #fff;  /* White border for the button */
+    color: #fff; /* White text */
+}
+
+.btn-outline-light:hover {
+    background-color: #1565c0;  /* Accent color for button hover */
+    color: #fff;  /* White text on hover */
+}
+
+/* Default State (No border) */
+.login-btn {
+    border: none; /* Remove border by default */
+    padding: 8px 16px; /* Padding for the button */
+    border-radius: 50px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+.profile-dropdown a {
+    padding-right: 0; /* Remove any extra padding */
+}
+
+.profile-dropdown img {
+    cursor: pointer; /* Ensure it’s clickable */
+}
+
+
+/* Responsive Navbar (Mobile) */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-toggler {
+        border-color: #fff;  /* White border for the toggler */
+    }
+
+    .navbar-toggler-icon {
+        background-color: #fff;  /* White icon for toggler */
+    }
+}
+
+ /* ============== Hero ==============  */
+ .bento-item {
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.bento-item:hover {
+    transform: scale(1.05);
+}
+
+.bento-tall {
+    height: 410px;
+}
+
+.bento-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+}
+
+.bento-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* ============= game/apps ================ */
+.filter-sidebar {
+    background: white;
+    border-radius: 12px;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
+.product-card {
+    background: white;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.product-image {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+.price {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.discount-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #dc2626;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.875rem;
+}
+
+.wishlist-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: white;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.wishlist-btn:hover {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.rating-stars {
+    color: #fbbf24;
+}
+
+.category-badge {
+    background: #e5e7eb;
+    color: #4b5563;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+}
+
+.filter-group {
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.color-option {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+}
+
+.color-option.selected::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border: 2px solid #2563eb;
+    border-radius: 50%;
+}
+
+.sort-btn {
+    background: white;
+    border: 1px solid #e5e7eb;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.sort-btn:hover {
+    background: #f3f4f6;
+}
+
+.cart-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    transition: all 0.2s;
+}
+
+.cart-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* ============= pagination ================ */
+
+/* Dark Mode Pagination Styles for Bootstrap */
+.pagination-dark .page-link {
+    background-color: #343a40;  /* Dark background for page links */
+    color: #fff;  /* White text for page links */
+    border: 1px solid #444; /* Darker border for page links */
+}
+
+.pagination-dark .page-item.active .page-link {
+    background-color: #ff3366;  /* Accent color for active page */
+    border-color: #ff3366;  /* Accent color border for active page */
+    color: #fff;  /* White text on active page */
+}
+
+.pagination-dark .page-link:hover {
+    background-color: #495057;  /* Slightly lighter background for hover */
+    color: #ff3366;  /* Accent color on hover */
+}
+
+.pagination-dark .page-link:focus {
+    box-shadow: none;  /* Remove box-shadow on focus */
+}
+
+.pagination-dark .page-item.disabled .page-link {
+    background-color: #222;  /* Dark background for disabled state */
+    color: #6c757d;  /* Lighter text for disabled state */
+    border-color: #333;  /* Darker border for disabled state */
+}
+
+/* Custom border for pagination items */
+.pagination-dark .page-item {
+    margin: 0 5px;
+}
+
+.pagination-dark .page-item:first-child .page-link {
+    border-radius: 0.375rem 0 0 0.375rem; /* Rounded corners for first page item */
+}
+
+.pagination-dark .page-item:last-child .page-link {
+    border-radius: 0 0.375rem 0.375rem 0; /* Rounded corners for last page item */
+}
+
+/* ============= footer ================ */
+.footer {
+    background: linear-gradient(to right, #1a1c20, #2c3e50);
+    color: #ffffff;
+    padding: 70px 0 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, #3498db, #2ecc71);
+}
+
+.footer-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #3498db, #2ecc71);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-about {
+    color: #a4b5c6;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.footer h5 {
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.footer h5::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 30px;
+    height: 2px;
+    background: #3498db;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #a4b5c6;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: #3498db;
+    transform: translateX(5px);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #3498db;
+    transform: translateY(-3px);
+    color: #fff;
+}
+
+.footer-newsletter {
+    position: relative;
+    margin-top: 20px;
+}
+
+.footer-newsletter input {
+    padding: 12px 15px;
+    border-radius: 25px;
+    border: none;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    outline: none;
+    padding-right: 50px;
+}
+
+.footer-newsletter input::placeholder {
+    color: #a4b5c6;
+}
+
+.newsletter-btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    bottom: 5px;
+    width: 40px;
+    border-radius: 50%;
+    background: #3498db;
+    border: none;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.newsletter-btn:hover {
+    background: #2980b9;
+}
+
+.footer-bottom {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    color: #a4b5c6;
+}
+
+.footer-bottom-links {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-bottom-links a {
+    color: #a4b5c6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+    color: #3498db;
+}
+
+@media (max-width: 768px) {
+    .footer-section {
+        margin-bottom: 40px;
+    }
+}
